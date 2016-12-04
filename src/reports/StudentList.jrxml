@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="518e5bda-2ecf-4662-8183-aadefd12c4ba">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_student.`studID` AS tbl_student_studID,
+     tbl_student.`fname` AS tbl_student_fname,
+     tbl_student.`mname` AS tbl_student_mname,
+     tbl_student.`lname` AS tbl_student_lname,
+     tbl_student.`gender` AS tbl_student_gender,
+     tbl_student.`dob` AS tbl_student_dob
+FROM
+     `tbl_student` tbl_student]]>
+	</queryString>
+	<field name="tbl_student_studID" class="java.lang.String"/>
+	<field name="tbl_student_fname" class="java.lang.String"/>
+	<field name="tbl_student_mname" class="java.lang.String"/>
+	<field name="tbl_student_lname" class="java.lang.String"/>
+	<field name="tbl_student_gender" class="java.lang.String"/>
+	<field name="tbl_student_dob" class="java.sql.Date"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="50102624-c705-49b5-a7c4-798d825ed492" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="39ce8be6-c4a3-4732-bf6e-1455bc633d23" x="20" y="20" width="281" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[STUDENT LIST]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="eb6da65b-0e70-4347-80ba-d1040da15b44" x="395" y="33" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[BISU-Candijay Campus]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27">
+			<staticText>
+				<reportElement uuid="064f829d-d32c-4beb-b6b7-c370bf23087d" x="0" y="0" width="21" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[#]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99e249a4-8e54-4874-bd91-fee6a42ce4bb" x="35" y="0" width="45" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="91e938e3-a5a0-4af9-b7c7-a5062fbbc719" x="94" y="0" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7aad676e-948d-430c-b71d-6efccc1e8902" x="188" y="0" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cba590c9-a686-48b3-a37e-685f433f9b6d" x="284" y="0" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Middle Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="61481593-c17c-4c5b-b537-741b29d7a12f" x="380" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a2b29da0-1ea2-4b04-9a16-0d02b0204e3a" x="444" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[Birthdate]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="18cad64f-b7d5-4d62-b55a-af2578503435" x="0" y="23" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="7918dccd-9a9d-44a8-b593-8a97e4c01bee" x="0" y="26" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement uuid="15cf85f1-52ce-41e0-8b4d-280d31d56982" x="0" y="0" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cfcb410c-a9ab-4bb3-97d1-dbfaddcdc5cb" x="35" y="0" width="45" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_studID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7ac6456a-f8d3-4808-8e82-e3780fa20020" x="94" y="0" width="80" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d2d1069b-798a-433d-a424-a4269070685c" x="188" y="0" width="80" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="353a0706-cef6-46c1-8cc4-0452b17b881b" x="284" y="0" width="80" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_mname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="809a325b-4774-4e2a-9fa5-114d8b27eb57" x="380" y="0" width="50" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_gender}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMM yyyy">
+				<reportElement uuid="d8023cbe-b68b-4ad3-b931-94b2ab90f934" x="444" y="0" width="111" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tbl_student_dob}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="f91214eb-0f4b-46cd-aaf7-e7f1876b2372" x="0" y="20" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="15c87adf-a36d-4175-a3f5-70f96d5cf539" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="520473a4-3b11-4708-b57b-06d8befe4530" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="5a7031e3-5069-49b8-be70-b69137ee0b56" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
